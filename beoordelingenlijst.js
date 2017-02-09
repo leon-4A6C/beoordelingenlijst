@@ -15,7 +15,7 @@ function getBeoordeling(cijfer) {
 }
 
 var buttons = document.getElementsByTagName("button");
-buttons[0].addeventlistner("click", function() {
+buttons[0].addEventListener("click", function() {
   var input = document.getElementById("input").value;
   document.getElementById("resultaat").innerHTML += "het cijfer is " + input + " en het is dus " + getBeoordeling(input);
 });
