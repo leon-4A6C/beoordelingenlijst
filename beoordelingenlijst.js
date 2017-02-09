@@ -1,3 +1,7 @@
+/*
+  top: je hebt het gewoon goed gedaan. het is kort
+  tip: hou het vol.
+*/
 function getBeoordeling(cijfer) {
   var beoordeling;
   if (cijfer >= 0 && cijfer < 50) {
@@ -9,7 +13,7 @@ function getBeoordeling(cijfer) {
   } else if (cijfer > 75 && cijfer <= 100) {
     beoordeling = "goed";
   } else {
-    beoordeling = "je hebt iets verkeerd ingevoerd, probeer het opnieuw";
+    beoordeling = null;
   }
   return beoordeling;
 }
@@ -19,9 +23,19 @@ var inputs = document.getElementsByTagName("input");
 
 buttons[0].addEventListener("click", function() {
   var input = inputs[0].value;
-  document.getElementById("resultaat").innerHTML += "het cijfer is " + input + " en het is dus " + getBeoordeling(input)+".<br>";
+  var beoordeling = getBeoordeling(input);
+  if (beoordeling) {
+    document.getElementById("resultaat").innerHTML += "het cijfer is " + input + " en het is dus " + beoordeling +".<br>";
+  } else {
+    document.getElementById("resultaat").innerHTML += "het cijfer klopt niet, het is onder de 0 of boven de 100<br>";
+  }
 });
 buttons[1].addEventListener("click", function() {
   var input = inputs[1].value;
-  document.getElementById("resultaat").innerHTML += "De beoordeling is "+getBeoordeling(input)+", want het cijfer is "+input+".<br>"
+  var beoordeling = getBeoordeling(input);
+  if (beoordeling) {
+    document.getElementById("resultaat").innerHTML += "De beoordeling is "+ beoordeling +", want het cijfer is "+input+".<br>"
+  } else {
+    document.getElementById("resultaat").innerHTML += "het cijfer klopt niet, het is onder de 0 of boven de 100<br>";
+  }
 });
