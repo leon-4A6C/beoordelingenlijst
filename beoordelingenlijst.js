@@ -15,7 +15,13 @@ function getBeoordeling(cijfer) {
 }
 
 var buttons = document.getElementsByTagName("button");
+var inputs = document.getElementsByTagName("input");
+
 buttons[0].addEventListener("click", function() {
-  var input = document.getElementById("input").value;
-  document.getElementById("resultaat").innerHTML += "het cijfer is " + input + " en het is dus " + getBeoordeling(input);
+  var input = inputs[0].value;
+  document.getElementById("resultaat").innerHTML += "het cijfer is " + input + " en het is dus " + getBeoordeling(input)+".<br>";
+});
+buttons[1].addEventListener("click", function() {
+  var input = inputs[1].value;
+  document.getElementById("resultaat").innerHTML += "De beoordeling is "+getBeoordeling(input)+", want het cijfer is "+input+".<br>"
 });
