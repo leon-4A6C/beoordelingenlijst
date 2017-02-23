@@ -34,7 +34,7 @@ buttons[1].addEventListener("click", function() {
   var input = inputs[1].value;
   var beoordeling = getBeoordeling(input);
   if (beoordeling) {
-    document.getElementById("resultaat").innerHTML += "De beoordeling is "+ beoordeling +", want het cijfer is "+input+".<br>"
+    document.getElementById("resultaat").innerHTML += "De beoordeling is "+ beoordeling +", want het cijfer is "+input+".<br>";
   } else {
     document.getElementById("resultaat").innerHTML += "het cijfer klopt niet, het is onder de 0 of boven de 100<br>";
   }
