@@ -6,11 +6,11 @@ function getBeoordeling(cijfer) {
   var beoordeling;
   if (cijfer >= 0 && cijfer < 50) {
     beoordeling = "onvoldoende";
-  } else if (cijfer > 49 && cijfer < 60) {
+  } else if (cijfer < 60) {
     beoordeling = "matig";
-  } else if (cijfer > 59 && cijfer < 75) {
+  } else if (cijfer < 75) {
     beoordeling = "voldoende";
-  } else if (cijfer > 75 && cijfer <= 100) {
+  } else if (cijfer <= 100) {
     beoordeling = "goed";
   } else {
     beoordeling = null;
